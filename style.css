@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+  --primary-color: #38bdf8;
+  --primary-hover: #0ea5e9;
+  --accent-color: #2a6f97;
+  --success-bg: #d1fae5;
+  --success-text: #047857;
+  --error-bg: #fee2e2;
+  --error-text: #b91c1c;
+  --gray-bg: #f1f5f9;
+}
+
+* {
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 480px;
+  background: #ffffffcc;
+  border-radius: 20px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  padding: 40px 30px;
+  text-align: center;
+  backdrop-filter: blur(6px);
+}
+
+.section {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+#welcome-section {
+  display: flex;
+  animation: popUp 1s ease-out;
+}
+
+@keyframes popUp {
+  0% { transform: scale(0.7); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+  color: var(--accent-color);
+  font-weight: 600;
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 20px;
+  font-size: 1rem;
+  margin: 10px 0;
+  cursor: pointer;
+  font-weight: 500;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button i {
+  margin-right: 8px;
+}
+
+.form-group {
+  width: 100%;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="file"] {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  font-size: 1rem;
+  outline: none;
+  background-color: var(--gray-bg);
+  transition: border 0.2s ease-in-out;
+}
+
+input:focus {
+  border-color: var(--primary-color);
+  background-color: #fff;
+}
+
+#login-message,
+#face-message,
+#file-status {
+  margin-top: 14px;
+  font-size: 0.9rem;
+  padding: 12px;
+  border-radius: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.success {
+  background-color: var(--success-bg);
+  color: var(--success-text);
+  border: 1px solid #10b981;
+}
+
+.error {
+  background-color: var(--error-bg);
+  color: var(--error-text);
+  border: 1px solid #ef4444;
+}
+
+.video-container {
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 4/3;
+  background-color: #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 15px;
+  box-shadow: inset 0 2px 8px rgba(0,0,0,0.05);
+}
+
+#webcam {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.file-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 25px;
+}
+
+#logout-btn {
+  background-color: #f992d0;
+}
+
+#logout-btn:hover {
+  background-color: #dfb0d6;
+}
